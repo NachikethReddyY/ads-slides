@@ -27,7 +27,7 @@ export default function Slide09() {
           transition={{ delay: 0.5, duration: 0.6 }}
           className="text-[clamp(2.5rem,6vw,5rem)] font-bold tracking-tight text-[#007AFF]"
         >
-          Nachiketh Reddy
+          Apoorva
         </motion.h1>
                         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -35,7 +35,7 @@ export default function Slide09() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="text-[clamp(1.25rem,3vw,1.75rem)] font-bold tracking-tight text-[#1D1D1F] mb-2"
         >
-          Vice President of ADS
+          Vice  President of ADS
         </motion.h2>
       </motion.div>
     </div>
