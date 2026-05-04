@@ -29,10 +29,10 @@ export default function Slide23() {
           2026 Event <span className="text-[#007AFF]">Timeline</span>
         </motion.h1>
 
-<div className="relative w-full overflow-x-auto">
-            <div className="absolute top-10 left-0 right-0 h-0.5 bg-[#007AFF]/30" />
+          <div className="relative w-full overflow-x-auto">
+            <div className="absolute top-10 left-8 right-52 h-0.5 bg-[#007AFF]/30" />
 
-            <div className="flex items-start justify-center gap-16 min-w-full px-8 pt-2 pb-4">
+            <div className="flex items-start justify-start gap-20 min-w-max pl-8 pr-52 pt-2 pb-8" style={{ paddingLeft: '2rem' }}>
               {events.map((evt, i) => (
                 <motion.div
                   key={evt.title}
@@ -46,12 +46,12 @@ export default function Slide23() {
                   }`}>
                     {evt.month}
                   </div>
-                  <div className={`apple-card p-6 text-center ${
+                  <div className={`apple-card p-8 text-center shadow-xl ${
                     evt.highlight ? 'bg-[#E9EBF1]' : 'bg-white'
-                  }`}>
-                    <h3 className="text-lg font-bold text-[#1D1D1F] mb-1">{evt.title}</h3>
+                  }`} style={{ minWidth: 220 }}>
+                    <h3 className="text-lg font-bold text-[#1D1D1F] mb-2">{evt.title}</h3>
                     {evt.desc && (
-                      <p className="text-sm text-[#86868B]">{evt.desc}</p>
+                      <p className="text-sm text-[#6B6B70] leading-relaxed">{evt.desc}</p>
                     )}
                   </div>
                 </motion.div>
