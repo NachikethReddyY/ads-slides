@@ -16,10 +16,10 @@ export default function Slide06() {
           className="mb-8 flex gap-8"
         >
           <div className="apple-card p-8 flex items-center justify-center">
-            <img src="/src/assets/sp.png" alt="SP" className="h-20 w-40 object-contain" />
+            <img src="/assets/sp.png" alt="SP" className="h-20 w-20 object-contain" />
           </div>
           <div className="apple-card p-8 flex items-center justify-center">
-            <img src="/src/assets/sutd.png" alt="SUTD" className="h-20 w-40 object-contain" />
+            <img src="/assets/sutd.png" alt="SUTD" className="h-20 w-20 object-contain" />
           </div>
         </motion.div>
         <motion.h1

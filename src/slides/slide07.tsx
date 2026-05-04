@@ -15,7 +15,7 @@ export default function Slide07() {
           transition={{ delay: 0.2, duration: 0.6, type: 'spring' }}
           className="mb-8"
         >
-          <img src="/src/assets/swift.svg" alt="Swift" className="h-32 w-32" />
+          <img src="/assets/swift.svg" alt="Swift" className="h-32 w-32" />
         </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}

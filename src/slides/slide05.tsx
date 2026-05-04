@@ -32,9 +32,9 @@ export default function Slide05() {
           transition={{ delay: 0.6, duration: 0.5 }}
           className="mt-10 flex gap-6"
         >
-          <img src="/src/assets/people/kaushik.jpeg" alt="Kaushik" className="h-40 w-40 rounded-full object-cover" />
-          <img src="/src/assets/people/harry.jpeg" alt="Harry" className="h-40 w-40 rounded-full object-cover" />
-          <img src="/src/assets/people/min thet.jpeg" alt="Min Thet" className="h-40 w-40 rounded-full object-cover" />
+          <img src="/assets/people/kaushik.jpeg" alt="Kaushik" className="h-40 w-40 rounded-full object-cover" />
+          <img src="/assets/people/harry.jpeg" alt="Harry" className="h-40 w-40 rounded-full object-cover" />
+          <img src="/assets/people/min thet.jpeg" alt="Min Thet" className="h-40 w-40 rounded-full object-cover" />
         </motion.div>
       </motion.div>
     </div>

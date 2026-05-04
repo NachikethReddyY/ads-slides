@@ -15,7 +15,7 @@ export default function Slide11() {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="mb-8"
         >
-          <img src="/src/assets/swift.svg" alt="Swift" className="h-24 w-24" />
+          <img src="/assets/swift.svg" alt="Swift" className="h-24 w-24" />
         </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
