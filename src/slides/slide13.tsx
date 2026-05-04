@@ -4,38 +4,17 @@ const techs = [
   {
     name: 'SwiftUI',
     desc: 'Modern UI framework',
-    svg: (
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-        <rect x="6" y="8" width="36" height="32" rx="6" fill="#007AFF" opacity="0.1" stroke="#007AFF" strokeWidth="2" />
-        <rect x="12" y="16" width="24" height="4" rx="2" fill="#007AFF" opacity="0.4" />
-        <rect x="12" y="24" width="16" height="4" rx="2" fill="#007AFF" opacity="0.4" />
-        <rect x="12" y="32" width="20" height="4" rx="2" fill="#007AFF" opacity="0.4" />
-      </svg>
-    ),
+    img: '/assets/swiftui.svg',
   },
   {
     name: 'ARKit',
     desc: 'Augmented Reality',
-    svg: (
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-        <rect x="8" y="12" width="32" height="28" rx="6" fill="#007AFF" opacity="0.1" stroke="#007AFF" strokeWidth="2" />
-        <path d="M18 28L22 24L26 28L32 20" stroke="#007AFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="34" cy="16" r="4" fill="#007AFF" />
-      </svg>
-    ),
+    img: '/assets/arkit.png',
   },
   {
     name: 'Core ML',
     desc: 'Machine Learning',
-    svg: (
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-        <rect x="8" y="8" width="32" height="32" rx="8" fill="#007AFF" opacity="0.1" stroke="#007AFF" strokeWidth="2" />
-        <circle cx="18" cy="20" r="3" fill="#007AFF" />
-        <circle cx="30" cy="20" r="3" fill="#007AFF" />
-        <circle cx="24" cy="30" r="3" fill="#007AFF" />
-        <path d="M18 20L24 30L30 20" stroke="#007AFF" strokeWidth="1.5" opacity="0.4" />
-      </svg>
-    ),
+    img: '/assets/core-ml-256x256_2x.png',
   },
 ];
 
@@ -70,7 +49,7 @@ export default function Slide13() {
               transition={{ delay: 0.5 + i * 0.15, duration: 0.5 }}
               className="apple-card p-8 flex flex-col items-center gap-4 min-w-[220px]"
             >
-              {t.svg}
+              <img src={t.img} alt={t.name} className="h-12 w-12 object-contain" />
               <h3 className="text-xl font-bold text-[#1D1D1F]">{t.name}</h3>
               <p className="text-sm text-[#86868B]">{t.desc}</p>
             </motion.div>
