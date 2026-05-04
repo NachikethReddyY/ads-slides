@@ -21,26 +21,20 @@ export default function Slide05() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-[clamp(2rem,6vw,4.5rem)] font-bold tracking-tight text-[#1D1D1F] leading-tight"
+          className="text-[clamp(1.5rem,4.5vw,3rem)] font-bold tracking-tight text-[#1D1D1F] leading-tight"
         >
-          Started by <span className="text-[#007AFF]">Kaushik</span>
+          Started by <span className="text-[#007AFF]">Kaushik, Harry and Min Thet</span>
           <br />
-          and his friends
         </motion.h1>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.5 }}
-          className="mt-10 flex gap-4"
+          className="mt-10 flex gap-6"
         >
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="h-16 w-16 rounded-full bg-[#007AFF]/10 flex items-center justify-center">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <circle cx="16" cy="12" r="6" fill="#007AFF" opacity="0.3" />
-                <path d="M8 28C8 22 24 22 24 28" stroke="#007AFF" strokeWidth="2" fill="none" strokeLinecap="round" />
-              </svg>
-            </div>
-          ))}
+          <img src="/src/assets/people/kaushik.jpeg" alt="Kaushik" className="h-40 w-40 rounded-full object-cover" />
+          <img src="/src/assets/people/harry.jpeg" alt="Harry" className="h-40 w-40 rounded-full object-cover" />
+          <img src="/src/assets/people/min thet.jpeg" alt="Min Thet" className="h-40 w-40 rounded-full object-cover" />
         </motion.div>
       </motion.div>
     </div>

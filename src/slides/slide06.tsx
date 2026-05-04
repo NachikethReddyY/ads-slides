@@ -13,24 +13,13 @@ export default function Slide06() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="mb-8 flex gap-6"
+          className="mb-8 flex gap-8"
         >
-          <div className="apple-card p-6 flex flex-col items-center gap-3">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-              <rect x="4" y="12" width="40" height="28" rx="4" fill="#007AFF" opacity="0.15" />
-              <rect x="4" y="12" width="40" height="28" rx="4" stroke="#007AFF" strokeWidth="2" />
-              <path d="M16 24H32M24 18V30" stroke="#007AFF" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-            <span className="text-sm font-semibold text-[#1D1D1F]">SP</span>
+          <div className="apple-card p-8 flex items-center justify-center">
+            <img src="/src/assets/sp.png" alt="SP" className="h-20 w-40 object-contain" />
           </div>
-          <div className="apple-card p-6 flex flex-col items-center gap-3">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-              <rect x="4" y="12" width="40" height="28" rx="4" fill="#007AFF" opacity="0.15" />
-              <rect x="4" y="12" width="40" height="28" rx="4" stroke="#007AFF" strokeWidth="2" />
-              <circle cx="24" cy="26" r="6" stroke="#007AFF" strokeWidth="2" />
-              <path d="M28 22L32 18" stroke="#007AFF" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-            <span className="text-sm font-semibold text-[#1D1D1F]">SUTD</span>
+          <div className="apple-card p-8 flex items-center justify-center">
+            <img src="/src/assets/sutd.png" alt="SUTD" className="h-20 w-40 object-contain" />
           </div>
         </motion.div>
         <motion.h1

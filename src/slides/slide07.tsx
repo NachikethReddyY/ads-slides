@@ -15,12 +15,7 @@ export default function Slide07() {
           transition={{ delay: 0.2, duration: 0.6, type: 'spring' }}
           className="mb-8"
         >
-          <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-            <rect x="20" y="20" width="80" height="80" rx="20" fill="#007AFF" opacity="0.1" />
-            <rect x="20" y="20" width="80" height="80" rx="20" stroke="#007AFF" strokeWidth="3" />
-            <path d="M40 60L52 72L80 44" stroke="#007AFF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M45 35H75M45 45H65" stroke="#007AFF" strokeWidth="3" strokeLinecap="round" />
-          </svg>
+          <img src="/src/assets/swift.svg" alt="Swift" className="h-32 w-32" />
         </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -30,7 +25,7 @@ export default function Slide07() {
         >
           and they discovered
           <br />
-          how powerful <span className="text-[#007AFF]">Swift</span> actually is.
+          how powerful <span className="text-[#FF5134]">Swift</span> actually is.
         </motion.h1>
       </motion.div>
     </div>

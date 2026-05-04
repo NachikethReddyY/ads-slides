@@ -15,15 +15,7 @@ export default function Slide11() {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="mb-8"
         >
-          <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-            <rect x="15" y="20" width="70" height="60" rx="12" fill="#007AFF" opacity="0.1" />
-            <rect x="15" y="20" width="70" height="60" rx="12" stroke="#007AFF" strokeWidth="2" />
-            <rect x="25" y="32" width="50" height="8" rx="4" fill="#007AFF" opacity="0.3" />
-            <rect x="25" y="46" width="35" height="8" rx="4" fill="#007AFF" opacity="0.3" />
-            <rect x="25" y="60" width="45" height="8" rx="4" fill="#007AFF" opacity="0.3" />
-            <circle cx="75" cy="68" r="12" fill="#007AFF" />
-            <path d="M70 68L73 71L80 64" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          <img src="/src/assets/swift.svg" alt="Swift" className="h-24 w-24" />
         </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -31,7 +23,7 @@ export default function Slide11() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="text-[clamp(2rem,5.5vw,4rem)] font-bold tracking-tight text-[#1D1D1F] leading-tight"
         >
-          We teach <span className="text-[#007AFF]">Swift</span> to people
+          We teach <span className="text-[#FF5134]">Swift</span> to people
           <br />
           to develop their own apps.
         </motion.h1>

@@ -15,13 +15,7 @@ export default function Slide09() {
           transition={{ delay: 0.2, duration: 0.5, type: 'spring' }}
           className="mb-8"
         >
-          <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-            <rect x="25" y="15" width="70" height="90" rx="16" fill="#007AFF" />
-            <rect x="35" y="30" width="50" height="60" rx="8" fill="white" opacity="0.2" />
-            <path d="M50 50L58 58L70 42" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-            <rect x="45" y="75" width="30" height="4" rx="2" fill="white" opacity="0.4" />
-            <rect x="50" y="85" width="20" height="4" rx="2" fill="white" opacity="0.4" />
-          </svg>
+          <img src="/src/assets/logo.png" alt="Logo" className="h-23 w-32" />
         </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
