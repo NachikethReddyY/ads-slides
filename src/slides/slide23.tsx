@@ -24,36 +24,40 @@ export default function Slide23() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-[clamp(1.8rem,4vw,3rem)] font-bold tracking-tight text-[#1D1D1F] mb-8"
+          className="text-[clamp(1.8rem,4vw,3rem)] font-bold tracking-tight text-[#1D1D1F] mb-1"
         >
           2026 Event <span className="text-[#007AFF]">Timeline</span>
         </motion.h1>
 
-        <div className="w-full overflow-x-auto pb-4">
-          <div className="flex gap-4 min-w-max px-4">
-            {events.map((evt, i) => (
-              <motion.div
-                key={evt.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
-                className={`apple-card p-5 flex flex-col gap-2 min-w-[180px] max-w-[220px] ${
-                  evt.highlight ? 'bg-[#007AFF]/10 border-[#007AFF]/30' : ''
-                }`}
-              >
-                <span className="text-xs font-bold tracking-wider text-[#007AFF] uppercase">
-                  {evt.month}
-                </span>
-                <h3 className="text-sm font-bold text-[#1D1D1F] leading-snug">
-                  {evt.title}
-                </h3>
-                {evt.desc && (
-                  <p className="text-xs text-[#86868B] leading-relaxed">{evt.desc}</p>
-                )}
-              </motion.div>
-            ))}
+<div className="relative w-full overflow-x-auto">
+            <div className="absolute top-10 left-0 right-0 h-0.5 bg-[#007AFF]/30" />
+
+            <div className="flex items-start justify-center gap-16 min-w-full px-8 pt-2 pb-4">
+              {events.map((evt, i) => (
+                <motion.div
+                  key={evt.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
+                  className="relative flex flex-col items-center w-64"
+                >
+                  <div className={`w-20 h-20 rounded-full flex items-center justify-center text-lg font-bold mb-4 z-10 ${
+                    evt.highlight ? 'bg-[#007AFF] text-white' : 'bg-white border-2 border-[#D1D1D6] text-[#707070]'
+                  }`}>
+                    {evt.month}
+                  </div>
+                  <div className={`apple-card p-6 text-center ${
+                    evt.highlight ? 'bg-[#E9EBF1]' : 'bg-white'
+                  }`}>
+                    <h3 className="text-lg font-bold text-[#1D1D1F] mb-1">{evt.title}</h3>
+                    {evt.desc && (
+                      <p className="text-sm text-[#86868B]">{evt.desc}</p>
+                    )}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
       </motion.div>
     </div>
   );
