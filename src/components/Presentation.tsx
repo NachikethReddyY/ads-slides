@@ -77,11 +77,14 @@ const slides = [
 export default function Presentation() {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [isEditing, setIsEditing] = useState(false);
+  const [inputValue, setInputValue] = useState(String(current + 1));
 
   const goNext = useCallback(() => {
     if (current < slides.length - 1) {
       setDirection(1);
       setCurrent((c) => c + 1);
+      setInputValue(String(current + 2));
     }
   }, [current]);
 
@@ -89,6 +92,7 @@ export default function Presentation() {
     if (current > 0) {
       setDirection(-1);
       setCurrent((c) => c - 1);
+      setInputValue(String(current));
     }
   }, [current]);
 
@@ -125,16 +129,8 @@ export default function Presentation() {
       </AnimatePresence>
 
       {/* Controls overlay */}
-      <div className="pointer-events-none absolute inset-0 flex flex-col justify-between p-4 md:p-6">
-        {/* Top bar: slide counter */}
-        <div className="flex justify-center">
-          <div className="pointer-events-auto apple-glass rounded-full px-4 py-1.5 md:px-5 md:py-2 text-xs md:text-sm font-medium text-[#86868B]">
-            {current + 1} / {slides.length}
-          </div>
-        </div>
-
-        {/* Bottom bar: navigation */}
-        <div className="flex items-center justify-between gap-4">
+      <div className="pointer-events-none absolute inset-0 flex flex-col justify-end p-4 md:p-6">
+        <div className="flex items-center justify-between">
           <button
             onClick={goPrev}
             disabled={current === 0}
@@ -146,21 +142,47 @@ export default function Presentation() {
             </svg>
           </button>
 
-          <div className="flex gap-1.5 overflow-hidden">
-            {slides.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => {
-                  setDirection(i > current ? 1 : -1);
-                  setCurrent(i);
-                }}
-                className={`pointer-events-auto h-2 rounded-full transition-all duration-300 shrink-0 ${
-                  i === current ? 'w-6 bg-[#007AFF]' : 'w-2 bg-[#D1D1D6] hover:bg-[#86868B]'
-                }`}
-                aria-label={`Go to slide ${i + 1}`}
-              />
-            ))}
-          </div>
+          {isEditing ? (
+            <input
+              type="number"
+              min="1"
+              max={slides.length}
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              onBlur={() => {
+                const num = parseInt(inputValue, 10);
+                if (!isNaN(num) && num >= 1 && num <= slides.length) {
+                  setDirection(num - 1 > current ? 1 : -1);
+                  setCurrent(num - 1);
+                } else {
+                  setInputValue(String(current + 1));
+                }
+                setIsEditing(false);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  const num = parseInt(inputValue, 10);
+                  if (!isNaN(num) && num >= 1 && num <= slides.length) {
+                    setDirection(num - 1 > current ? 1 : -1);
+                    setCurrent(num - 1);
+                  }
+                  setIsEditing(false);
+                } else if (e.key === 'Escape') {
+                  setInputValue(String(current + 1));
+                  setIsEditing(false);
+                }
+              }}
+              className="pointer-events-auto apple-glass rounded-full px-4 py-1.5 md:px-5 md:py-2 text-xs md:text-sm font-medium text-center w-24 outline-none"
+              autoFocus
+            />
+          ) : (
+            <div
+              className="pointer-events-auto apple-glass rounded-full px-4 py-1.5 md:px-5 md:py-2 text-xs md:text-sm font-medium text-[#86868B] cursor-pointer"
+              onClick={() => setIsEditing(true)}
+            >
+              {current + 1} / {slides.length}
+            </div>
+          )}
 
           <button
             onClick={goNext}

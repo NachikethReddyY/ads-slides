@@ -17,7 +17,7 @@ export default function Slide03() {
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5, type: 'spring' }}
-          className="mb-8"
+          className="mb-4"
         >
           <circle cx="50" cy="50" r="40" stroke="#007AFF" strokeWidth="3" fill="none" />
           <circle cx="50" cy="35" r="12" fill="#007AFF" />
