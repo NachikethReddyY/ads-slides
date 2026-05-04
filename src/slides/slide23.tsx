@@ -30,7 +30,10 @@ export default function Slide23() {
         </motion.h1>
 
           <div className="relative w-full overflow-x-auto">
-            <div className="absolute top-10 left-8 right-52 h-0.5 bg-[#007AFF]/30" />
+            <div
+              className="absolute top-10 left-8 h-0.5 bg-[#007AFF]/30"
+              style={{ width: '3000px' }}
+            />
 
             <div className="flex items-start justify-start gap-20 min-w-max pl-8 pr-52 pt-2 pb-8" style={{ paddingLeft: '2rem' }}>
               {events.map((evt, i) => (
