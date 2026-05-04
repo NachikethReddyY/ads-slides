@@ -16,9 +16,9 @@ export default function Slide23() {
           className="mb-8"
         >
           <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-            <rect x="20" y="15" width="60" height="70" rx="12" fill="#007AFF" opacity="0.1" stroke="#007AFF" strokeWidth="2.5" />
-            <path d="M30 35H70M30 45H60M30 55H50M30 65H55" stroke="#007AFF" strokeWidth="2.5" strokeLinecap="round" />
-            <circle cx="70" cy="25" r="6" fill="#007AFF" />
+            <rect x="15" y="10" width="70" height="80" rx="14" fill="#007AFF" opacity="0.1" stroke="#007AFF" strokeWidth="2.5" />
+            <path d="M35 25H65M30 40H70M25 55H75M25 70H70" stroke="#007AFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M40 32L50 42L70 22" stroke="#007AFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </motion.div>
         <motion.h1
@@ -27,7 +27,7 @@ export default function Slide23() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="text-[clamp(2.5rem,8vw,7rem)] font-black tracking-tighter text-[#1D1D1F]"
         >
-          Secretary
+          Publicity
         </motion.h1>
         <motion.div
           initial={{ width: 0 }}
