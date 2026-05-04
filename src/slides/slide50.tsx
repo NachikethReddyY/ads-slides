@@ -25,7 +25,7 @@ export default function Slide50() {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="text-[clamp(1.5rem,3.5vw,2.5rem)] font-bold tracking-tight text-[#1D1D1F] mb-6"
         >
-          The Ladder
+          Remember the Ladder
         </motion.h1>
         <div className="flex flex-col gap-2 w-full">
           {tiers.map((tier, i) => (

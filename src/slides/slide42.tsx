@@ -1,23 +1,5 @@
 import { motion } from 'framer-motion';
 
-const cards = [
-  {
-    title: 'Help run real events',
-    body: 'Be on the team behind every workshop and bootcamp.',
-    color: '#007AFF',
-  },
-  {
-    title: 'Lead, plan, execute',
-    body: 'Own decisions. Ship outcomes. Build the muscle.',
-    color: '#5856D6',
-  },
-  {
-    title: 'Find your people',
-    body: 'A small, tight crew that builds — and hangs — together.',
-    color: '#34C759',
-  },
-];
-
 export default function Slide42() {
   return (
     <div className="slide-base gradient-mesh">
@@ -25,28 +7,44 @@ export default function Slide42() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="flex flex-col items-center w-full max-w-5xl"
+        className="flex flex-col items-center text-center max-w-5xl w-full"
       >
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-[clamp(1.5rem,3.5vw,2.5rem)] font-bold tracking-tight text-[#1D1D1F] mb-8"
+          className="text-[clamp(2rem,5vw,4rem)] font-bold tracking-tight text-[#1D1D1F] mb-8"
         >
-          Operations — What We Do
+          The <span className="text-[#007AFF]">Ladder</span>
         </motion.h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
-          {cards.map((c, i) => (
+
+        <div className="flex flex-col items-center gap-2 w-full max-w-md">
+          {[
+            { num: '07', name: 'Mac Pro', color: '#1D1D1F', action: 'Arms crossed' },
+            { num: '06', name: 'iMac', color: '#5856D6', action: 'Large screen frame' },
+            { num: '05', name: 'MacBook', color: '#007AFF', action: 'Mime typing' },
+            { num: '04', name: 'iPad', color: '#5AC8FA', action: 'Wide rectangle, two hands' },
+            { num: '03', name: 'iPhone', color: '#34C759', action: 'Hand to ear' },
+            { num: '02', name: 'Apple Watch', color: '#FF9500', action: 'Tap your wrist' },
+            { num: '01', name: 'AirPods', color: '#FF3B30', action: 'Two fingers to ears' },
+          ].map((tier, i) => (
             <motion.div
-              key={c.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 + i * 0.15, duration: 0.5 }}
-              className="apple-card p-7 flex flex-col gap-3"
+              key={tier.num}
+              initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3 + i * 0.08, duration: 0.5 }}
+              className="apple-card px-6 py-3 flex items-center justify-between w-full"
             >
-              <div className="h-2 w-12 rounded-full" style={{ background: c.color }} />
-              <h3 className="text-lg font-bold text-[#1D1D1F]">{c.title}</h3>
-              <p className="text-sm text-[#86868B] leading-relaxed">{c.body}</p>
+              <div className="flex items-center gap-4">
+                <span
+                  className="text-lg font-black w-8 text-center"
+                  style={{ color: tier.color }}
+                >
+                  {tier.num}
+                </span>
+                <span className="text-base font-bold text-[#1D1D1F]">{tier.name}</span>
+              </div>
+              <span className="text-xs text-[#86868B]">{tier.action}</span>
             </motion.div>
           ))}
         </div>

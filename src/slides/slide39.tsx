@@ -1,8 +1,26 @@
 import { motion } from 'framer-motion';
 
-const heads = [
-  { name: 'Kendrick', initial: 'K', color: '#007AFF' },
-  { name: 'Janston', initial: 'J', color: '#34C759' },
+const traits = [
+  {
+    title: 'Energy',
+    body: "You bring it. Events feed off it.",
+    color: '#FF9500',
+  },
+  {
+    title: 'Team-first',
+    body: 'We win together. Always.',
+    color: '#007AFF',
+  },
+  {
+    title: 'Reliability',
+    body: "When you say you'll do it, it gets done.",
+    color: '#34C759',
+  },
+  {
+    title: 'Initiative',
+    body: "See a gap? Step in. We'll back you.",
+    color: '#AF52DE',
+  },
 ];
 
 export default function Slide39() {
@@ -12,32 +30,30 @@ export default function Slide39() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="flex flex-col items-center text-center max-w-4xl"
+        className="flex flex-col items-center w-full max-w-5xl"
       >
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-[clamp(1.5rem,3.5vw,2.5rem)] font-bold tracking-tight text-[#1D1D1F] mb-12"
+          className="text-[clamp(1.5rem,3.5vw,2.5rem)] font-bold tracking-tight text-[#1D1D1F] mb-8"
         >
-          Heads of Operations
+          What We Look For
         </motion.h1>
-        <div className="flex flex-wrap justify-center gap-10">
-          {heads.map((h, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full max-w-3xl">
+          {traits.map((t, i) => (
             <motion.div
-              key={h.name}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3 + i * 0.2, duration: 0.5, type: 'spring' }}
-              className="apple-card p-10 flex flex-col items-center gap-5 min-w-[180px]"
+              key={t.title}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 + i * 0.12, duration: 0.5 }}
+              className="apple-card p-6 flex flex-col gap-2"
             >
-              <div
-                className="h-24 w-24 rounded-full flex items-center justify-center text-white text-3xl font-bold"
-                style={{ background: h.color }}
-              >
-                {h.initial}
+              <div className="flex items-center gap-3">
+                <div className="h-3 w-3 rounded-full" style={{ background: t.color }} />
+                <h3 className="text-lg font-bold text-[#1D1D1F]">{t.title}</h3>
               </div>
-              <span className="text-xl font-bold text-[#1D1D1F]">{h.name}</span>
+              <p className="text-sm text-[#86868B] leading-relaxed">{t.body}</p>
             </motion.div>
           ))}
         </div>

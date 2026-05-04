@@ -1,5 +1,23 @@
 import { motion } from 'framer-motion';
 
+const cards = [
+  {
+    title: 'Help run real events',
+    body: 'Be on the team behind every workshop and bootcamp.',
+    color: '#007AFF',
+  },
+  {
+    title: 'Lead, plan, execute',
+    body: 'Own decisions. Ship outcomes. Build the muscle.',
+    color: '#5856D6',
+  },
+  {
+    title: 'Find your people',
+    body: 'A small, tight crew that builds — and hangs — together.',
+    color: '#34C759',
+  },
+];
+
 export default function Slide37() {
   return (
     <div className="slide-base gradient-mesh">
@@ -7,35 +25,31 @@ export default function Slide37() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="flex flex-col items-center text-center"
+        className="flex flex-col items-center w-full max-w-5xl"
       >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="mb-8"
-        >
-          <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-            <rect x="15" y="15" width="70" height="70" rx="16" fill="#007AFF" opacity="0.1" stroke="#007AFF" strokeWidth="2.5" />
-            <path d="M35 50L45 60L65 40" stroke="#007AFF" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-            <circle cx="75" cy="25" r="8" fill="#34C759" />
-            <path d="M72 25L75 28L79 22" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </motion.div>
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-[clamp(2.5rem,8vw,7rem)] font-black tracking-tighter text-[#1D1D1F]"
+          transition={{ delay: 0.2, duration: 0.5 }}
+          className="text-[clamp(1.5rem,3.5vw,2.5rem)] font-bold tracking-tight text-[#1D1D1F] mb-8"
         >
-          Operations
+          Operations — What We Do
         </motion.h1>
-        <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: 100 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-          className="mt-6 h-1.5 rounded-full bg-[#007AFF]"
-        />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
+          {cards.map((c, i) => (
+            <motion.div
+              key={c.title}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 + i * 0.15, duration: 0.5 }}
+              className="apple-card p-7 flex flex-col gap-3"
+            >
+              <div className="h-2 w-12 rounded-full" style={{ background: c.color }} />
+              <h3 className="text-lg font-bold text-[#1D1D1F]">{c.title}</h3>
+              <p className="text-sm text-[#86868B] leading-relaxed">{c.body}</p>
+            </motion.div>
+          ))}
+        </div>
       </motion.div>
     </div>
   );

@@ -1,5 +1,23 @@
 import { motion } from 'framer-motion';
 
+const techs = [
+  {
+    name: 'SwiftUI',
+    desc: 'Modern UI framework',
+    img: '/assets/swiftui.svg',
+  },
+  {
+    name: 'ARKit',
+    desc: 'Augmented Reality',
+    img: '/assets/arkit.png',
+  },
+  {
+    name: 'Core ML',
+    desc: 'Machine Learning',
+    img: '/assets/core-ml-256x256_2x.png',
+  },
+];
+
 export default function Slide08() {
   return (
     <div className="slide-base gradient-mesh">
@@ -9,30 +27,34 @@ export default function Slide08() {
         transition={{ duration: 0.6 }}
         className="flex flex-col items-center text-center max-w-5xl"
       >
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="mb-8"
+          className="text-[clamp(1.2rem,2.5vw,1.8rem)] text-[#86868B] mb-4"
         >
-          <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-            <rect x="20" y="15" width="60" height="50" rx="8" fill="#F5F5F7" stroke="#86868B" strokeWidth="2" />
-            <rect x="35" y="75" width="30" height="8" rx="4" fill="#86868B" />
-            <path d="M45 40L50 45L60 35" stroke="#34C759" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-            <circle cx="75" cy="25" r="10" fill="#FF3B30" />
-            <path d="M70 25H80M75 20V30" stroke="white" strokeWidth="2" strokeLinecap="round" />
-          </svg>
-        </motion.div>
-        <motion.h1
+          We use 3 main technologies
+        </motion.p>
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-[clamp(2rem,5.5vw,4rem)] font-bold tracking-tight text-[#1D1D1F] leading-tight"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6"
         >
-          They wanted to bring it to the school
-          <br />
-          <span className="text-[#86868B]">but there was no one to teach them</span>
-        </motion.h1>
+          {techs.map((t, i) => (
+            <motion.div
+              key={t.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 + i * 0.15, duration: 0.5 }}
+              className="apple-card p-8 flex flex-col items-center gap-4 min-w-[220px]"
+            >
+              <img src={t.img} alt={t.name} className="h-12 w-12 object-contain" />
+              <h3 className="text-xl font-bold text-[#1D1D1F]">{t.name}</h3>
+              <p className="text-sm text-[#86868B]">{t.desc}</p>
+            </motion.div>
+          ))}
+        </motion.div>
       </motion.div>
     </div>
   );

@@ -15,16 +15,14 @@ export default function Slide29() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="text-[clamp(2.5rem,7vw,6rem)] font-bold tracking-tight text-[#1D1D1F]"
         >
-          What Do We Do?
+          EXPECTATIONS
         </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: 120 }}
           transition={{ delay: 0.5, duration: 0.5 }}
-          className="mt-4 text-[clamp(1.2rem,2.5vw,1.8rem)] text-[#86868B]"
-        >
-          Publicity Subcommittee
-        </motion.p>
+          className="mt-6 h-1.5 rounded-full bg-[#007AFF]"
+        />
       </motion.div>
     </div>
   );

@@ -2,46 +2,40 @@ import { motion } from 'framer-motion';
 
 export default function Slide36() {
   return (
-    <div className="slide-base" style={{ background: 'linear-gradient(135deg, #FF9500 0%, #FF2D55 100%)' }}>
+    <div className="slide-base gradient-mesh">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="flex flex-col items-center text-center"
+        transition={{ duration: 0.6 }}
+        className="flex flex-col items-center text-center max-w-5xl"
       >
         <motion.div
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.6, type: 'spring' }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
           className="mb-8"
         >
-          <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-            <circle cx="60" cy="60" r="50" stroke="white" strokeWidth="4" fill="none" opacity="0.3" />
-            <path d="M60 30V60L85 75" stroke="white" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+            <rect x="15" y="20" width="70" height="60" rx="14" fill="#007AFF" opacity="0.1" stroke="#007AFF" strokeWidth="2" />
+            <rect x="25" y="32" width="50" height="6" rx="3" fill="#007AFF" opacity="0.3" />
+            <rect x="25" y="44" width="35" height="6" rx="3" fill="#007AFF" opacity="0.3" />
+            <rect x="25" y="56" width="45" height="6" rx="3" fill="#007AFF" opacity="0.3" />
+            <circle cx="75" cy="68" r="8" fill="#007AFF" />
+            <path d="M72 68L75 71L79 65" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="text-[clamp(3rem,10vw,8rem)] font-black tracking-tighter text-white"
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="text-[clamp(2rem,5.5vw,4rem)] font-bold tracking-tight text-[#1D1D1F] leading-tight"
         >
-          BREAK
+          We facilitate the teaching of the
+          <br />
+          <span className="text-[#007AFF]">Swift</span> programming language
+          <br />
+          and organise the events and more.
         </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.5 }}
-          className="mt-6 text-[clamp(1.5rem,4vw,3rem)] font-semibold text-white/90"
-        >
-          10 Minutes
-        </motion.p>
-        <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: 180 }}
-          transition={{ delay: 0.9, duration: 0.6 }}
-          className="mt-8 h-1.5 rounded-full bg-white/50"
-        />
       </motion.div>
     </div>
   );

@@ -1,23 +1,5 @@
 import { motion } from 'framer-motion';
 
-const rules = [
-  {
-    num: '1',
-    title: 'Everyone starts at AirPods.',
-    body: 'The journey begins at tier one. No exceptions, no head starts.',
-  },
-  {
-    num: '2',
-    title: 'Flash your signal first.',
-    body: 'Find someone on your tier. Verify signals. Then play one round.',
-  },
-  {
-    num: '3',
-    title: 'Win → climb. Lose → drop.',
-    body: 'Winner moves up a tier. Loser moves down — but never below AirPods.',
-  },
-];
-
 export default function Slide49() {
   return (
     <div className="slide-base gradient-mesh">
@@ -25,35 +7,27 @@ export default function Slide49() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="flex flex-col items-center w-full max-w-4xl"
+        className="flex flex-col items-center text-center"
       >
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-[clamp(1.2rem,2.5vw,1.8rem)] text-[#86868B] mb-8"
+        <motion.div
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.6, type: 'spring' }}
+          className="mb-8"
         >
-          The basics. Memorise these.
-        </motion.p>
-        <div className="flex flex-col gap-5 w-full">
-          {rules.map((r, i) => (
-            <motion.div
-              key={r.num}
-              initial={{ opacity: 0, x: -40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 + i * 0.15, duration: 0.5 }}
-              className="apple-card p-6 flex items-start gap-5"
-            >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#007AFF] text-white text-xl font-bold">
-                {r.num}
-              </div>
-              <div className="flex flex-col gap-1">
-                <h3 className="text-lg font-bold text-[#1D1D1F]">{r.title}</h3>
-                <p className="text-sm text-[#86868B] leading-relaxed">{r.body}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+          <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+            <circle cx="60" cy="60" r="50" fill="#007AFF" opacity="0.1" stroke="#007AFF" strokeWidth="3" />
+            <path d="M45 60L55 70L75 50" stroke="#007AFF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </motion.div>
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="text-[clamp(3rem,10vw,8rem)] font-black tracking-tighter text-[#1D1D1F]"
+        >
+          Ready?
+        </motion.h1>
       </motion.div>
     </div>
   );

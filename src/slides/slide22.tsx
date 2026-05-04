@@ -1,5 +1,41 @@
 import { motion } from 'framer-motion';
 
+const committees = [
+  {
+    name: 'Publicity',
+    color: '#FF3B30',
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <rect x="5" y="8" width="30" height="24" rx="4" fill="#FF3B30" opacity="0.15" stroke="#FF3B30" strokeWidth="2" />
+        <circle cx="20" cy="20" r="5" fill="#FF3B30" opacity="0.3" />
+        <path d="M20 15V10M20 25V30M15 20H10M25 20H30" stroke="#FF3B30" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Secretary',
+    color: '#007AFF',
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <rect x="6" y="4" width="28" height="32" rx="4" fill="#007AFF" opacity="0.15" stroke="#007AFF" strokeWidth="2" />
+        <path d="M12 12H28M12 18H24M12 24H20" stroke="#007AFF" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Operations',
+    color: '#34C759',
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <rect x="4" y="10" width="32" height="20" rx="4" fill="#34C759" opacity="0.15" stroke="#34C759" strokeWidth="2" />
+        <circle cx="14" cy="20" r="3" fill="#34C759" />
+        <circle cx="26" cy="20" r="3" fill="#34C759" opacity="0.3" />
+        <path d="M17 20H23" stroke="#34C759" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+];
+
 export default function Slide22() {
   return (
     <div className="slide-base gradient-mesh">
@@ -7,36 +43,38 @@ export default function Slide22() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="flex flex-col items-center text-center"
+        className="flex flex-col items-center text-center max-w-5xl"
       >
-        <motion.svg
-          width="80"
-          height="80"
-          viewBox="0 0 80 80"
-          fill="none"
-          initial={{ opacity: 0, rotate: -20 }}
-          animate={{ opacity: 1, rotate: 0 }}
-          transition={{ delay: 0.2, duration: 0.5, type: 'spring' }}
-          className="mb-8"
-        >
-          <rect x="10" y="20" width="60" height="40" rx="6" fill="#007AFF" opacity="0.1" stroke="#007AFF" strokeWidth="2" />
-          <path d="M20 40H60M40 25V55M25 30H30M25 35H30M25 45H30M25 50H30" stroke="#007AFF" strokeWidth="1.5" strokeLinecap="round" />
-          <circle cx="55" cy="30" r="4" fill="#007AFF" opacity="0.3" />
-        </motion.svg>
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-[clamp(2.5rem,7vw,6rem)] font-bold tracking-tight text-[#1D1D1F]"
+          transition={{ delay: 0.2, duration: 0.5 }}
+          className="text-[clamp(1.2rem,2.5vw,1.8rem)] text-[#86868B] mb-8"
         >
-          Timeline
-        </motion.h1>
-        <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: 100 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-          className="mt-6 h-1.5 rounded-full bg-[#007AFF]"
-        />
+          To learn about our subcommittees
+        </motion.p>
+        <div className="flex flex-wrap justify-center gap-6 mb-10">
+          {committees.map((c, i) => (
+            <motion.div
+              key={c.name}
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ delay: 0.3 + i * 0.15, duration: 0.5, type: 'spring' }}
+              className="apple-card p-8 flex flex-col items-center gap-4 min-w-[160px]"
+            >
+              {c.icon}
+              <span className="text-lg font-bold text-[#1D1D1F]">{c.name}</span>
+            </motion.div>
+          ))}
+        </div>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.5 }}
+          className="text-[clamp(1.5rem,3.5vw,2.5rem)] font-semibold text-[#1D1D1F]"
+        >
+          Now let&apos;s hear from them!
+        </motion.h2>
       </motion.div>
     </div>
   );

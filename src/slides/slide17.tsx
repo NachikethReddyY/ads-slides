@@ -7,38 +7,36 @@ export default function Slide17() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="flex flex-col items-center text-center max-w-5xl"
+        className="flex flex-col items-center text-center"
       >
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
+        <motion.svg
+          width="80"
+          height="80"
+          viewBox="0 0 80 80"
+          fill="none"
+          initial={{ opacity: 0, rotate: -20 }}
+          animate={{ opacity: 1, rotate: 0 }}
+          transition={{ delay: 0.2, duration: 0.5, type: 'spring' }}
           className="mb-8"
         >
-          <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-            <rect x="15" y="20" width="70" height="60" rx="12" fill="#007AFF" opacity="0.1" stroke="#007AFF" strokeWidth="2" />
-            <rect x="25" y="35" width="50" height="6" rx="3" fill="#007AFF" opacity="0.3" />
-            <rect x="25" y="48" width="40" height="6" rx="3" fill="#007AFF" opacity="0.3" />
-            <rect x="25" y="61" width="30" height="6" rx="3" fill="#007AFF" opacity="0.3" />
-            <path d="M72 28L76 32L84 22" stroke="#34C759" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </motion.div>
+          <rect x="10" y="20" width="60" height="40" rx="6" fill="#007AFF" opacity="0.1" stroke="#007AFF" strokeWidth="2" />
+          <path d="M20 40H60M40 25V55M25 30H30M25 35H30M25 45H30M25 50H30" stroke="#007AFF" strokeWidth="1.5" strokeLinecap="round" />
+          <circle cx="55" cy="30" r="4" fill="#007AFF" opacity="0.3" />
+        </motion.svg>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-[clamp(2.5rem,7vw,5.5rem)] font-bold tracking-tight text-[#1D1D1F]"
+          className="text-[clamp(2.5rem,7vw,6rem)] font-bold tracking-tight text-[#1D1D1F]"
         >
-          Swift Nano <span className="text-[#007AFF]">Bootcamp</span>
+          Timeline
         </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.7, duration: 0.5 }}
-          className="mt-6 text-[clamp(1rem,2vw,1.5rem)] text-[#86868B] max-w-2xl"
-        >
-          An intensive program to master Swift fundamentals and build real apps
-        </motion.p>
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: 100 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+          className="mt-6 h-1.5 rounded-full bg-[#007AFF]"
+        />
       </motion.div>
     </div>
   );

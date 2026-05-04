@@ -15,14 +15,16 @@ export default function Slide24() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="text-[clamp(2.5rem,7vw,6rem)] font-bold tracking-tight text-[#1D1D1F]"
         >
-          How you can <span className="text-[#007AFF]">help?</span>
+          What Do We Do?
         </motion.h1>
-        <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: 140 }}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}
-          className="mt-6 h-1.5 rounded-full bg-[#007AFF]"
-        />
+          className="mt-4 text-[clamp(1.2rem,2.5vw,1.8rem)] text-[#86868B]"
+        >
+          Publicity Subcommittee
+        </motion.p>
       </motion.div>
     </div>
   );

@@ -13,41 +13,66 @@ export default function Slide47() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-[clamp(2rem,5vw,4rem)] font-bold tracking-tight text-[#1D1D1F] mb-8"
+          className="text-[clamp(1.5rem,3.5vw,2.5rem)] font-bold tracking-tight text-[#1D1D1F] mb-8"
         >
-          The <span className="text-[#007AFF]">Ladder</span>
+          Picture it
         </motion.h1>
 
-        <div className="flex flex-col items-center gap-2 w-full max-w-md">
-          {[
-            { num: '07', name: 'Mac Pro', color: '#1D1D1F', action: 'Arms crossed' },
-            { num: '06', name: 'iMac', color: '#5856D6', action: 'Large screen frame' },
-            { num: '05', name: 'MacBook', color: '#007AFF', action: 'Mime typing' },
-            { num: '04', name: 'iPad', color: '#5AC8FA', action: 'Wide rectangle, two hands' },
-            { num: '03', name: 'iPhone', color: '#34C759', action: 'Hand to ear' },
-            { num: '02', name: 'Apple Watch', color: '#FF9500', action: 'Tap your wrist' },
-            { num: '01', name: 'AirPods', color: '#FF3B30', action: 'Two fingers to ears' },
-          ].map((tier, i) => (
-            <motion.div
-              key={tier.num}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 + i * 0.08, duration: 0.5 }}
-              className="apple-card px-6 py-3 flex items-center justify-between w-full"
-            >
-              <div className="flex items-center gap-4">
-                <span
-                  className="text-lg font-black w-8 text-center"
-                  style={{ color: tier.color }}
-                >
-                  {tier.num}
-                </span>
-                <span className="text-base font-bold text-[#1D1D1F]">{tier.name}</span>
+        <div className="flex flex-col md:flex-row gap-6 w-full max-w-4xl items-center justify-center">
+          {/* Round 1 */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="apple-card p-6 flex flex-col items-center gap-4"
+          >
+            <span className="text-xs font-bold tracking-wider text-[#86868B] uppercase">ROUND 1</span>
+            <span className="text-sm font-semibold text-[#1D1D1F]">A defeats B</span>
+            <div className="flex items-center gap-4">
+              <div className="flex flex-col items-center gap-1">
+                <div className="h-12 w-12 rounded-full bg-[#007AFF] flex items-center justify-center text-white font-bold">A</div>
+                <span className="text-xs text-[#007AFF] font-bold">Crown</span>
               </div>
-              <span className="text-xs text-[#86868B]">{tier.action}</span>
-            </motion.div>
-          ))}
+              <svg width="32" height="16" viewBox="0 0 32 16" fill="none">
+                <path d="M4 8H28M24 4L28 8L24 12" stroke="#007AFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <div className="h-12 w-12 rounded-full bg-[#D1D1D6] flex items-center justify-center text-white font-bold opacity-50">B</div>
+            </div>
+          </motion.div>
+
+          {/* Round 2 */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.7, duration: 0.5 }}
+            className="apple-card p-6 flex flex-col items-center gap-4"
+          >
+            <span className="text-xs font-bold tracking-wider text-[#86868B] uppercase">ROUND 2</span>
+            <span className="text-sm font-semibold text-[#1D1D1F]">C defeats A</span>
+            <div className="flex items-center gap-4">
+              <div className="flex flex-col items-center gap-1">
+                <div className="h-12 w-12 rounded-full bg-[#FF3B30] flex items-center justify-center text-white font-bold">C</div>
+                <span className="text-xs text-[#FF3B30] font-bold">Crown</span>
+              </div>
+              <svg width="32" height="16" viewBox="0 0 32 16" fill="none">
+                <path d="M4 8H28M24 4L28 8L24 12" stroke="#FF3B30" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <div className="flex flex-col items-center gap-1">
+                <div className="h-12 w-12 rounded-full bg-[#007AFF] flex items-center justify-center text-white font-bold opacity-50">A</div>
+                <div className="h-10 w-10 rounded-full bg-[#D1D1D6] flex items-center justify-center text-white font-bold opacity-50 -mt-2">B</div>
+              </div>
+            </div>
+          </motion.div>
         </div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.5 }}
+          className="mt-8 text-xs text-[#86868B]"
+        >
+          Crown = active leader &middot; Faded = eliminated, in line
+        </motion.p>
       </motion.div>
     </div>
   );

@@ -1,54 +1,41 @@
 import { motion } from 'framer-motion';
 
-const tiers = [
-  { num: '07', name: 'Mac Pro', color: '#1D1D1F', action: 'Arms crossed' },
-  { num: '06', name: 'iMac', color: '#5856D6', action: 'Large screen frame' },
-  { num: '05', name: 'MacBook', color: '#007AFF', action: 'Mime typing' },
-  { num: '04', name: 'iPad', color: '#5AC8FA', action: 'Wide rectangle, two hands' },
-  { num: '03', name: 'iPhone', color: '#34C759', action: 'Hand to ear' },
-  { num: '02', name: 'Apple Watch', color: '#FF9500', action: 'Tap your wrist' },
-  { num: '01', name: 'AirPods', color: '#FF3B30', action: 'Two fingers to ears' },
-];
-
 export default function Slide55() {
   return (
-    <div className="slide-base gradient-mesh">
+    <div className="slide-base" style={{ background: 'linear-gradient(135deg, #1D1D1F 0%, #434344 100%)' }}>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        className="flex flex-col items-center w-full max-w-xl"
+        transition={{ duration: 0.8 }}
+        className="flex flex-col items-center text-center"
       >
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-[clamp(1.5rem,3.5vw,2.5rem)] font-bold tracking-tight text-[#1D1D1F] mb-6"
+        <motion.div
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.6, type: 'spring' }}
+          className="mb-8"
         >
-          Remember the Ladder
+          <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+            <rect x="20" y="20" width="80" height="80" rx="20" stroke="white" strokeWidth="3" fill="none" opacity="0.3" />
+            <circle cx="60" cy="50" r="16" fill="white" opacity="0.2" />
+            <path d="M48 72C48 60 72 60 72 72" stroke="white" strokeWidth="3" fill="none" strokeLinecap="round" />
+            <circle cx="85" cy="35" r="8" fill="#007AFF" />
+          </svg>
+        </motion.div>
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="text-[clamp(3rem,10vw,8rem)] font-black tracking-tighter text-white"
+        >
+          Photo Time
         </motion.h1>
-        <div className="flex flex-col gap-2 w-full">
-          {tiers.map((tier, i) => (
-            <motion.div
-              key={tier.num}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.25 + i * 0.07, duration: 0.4 }}
-              className="apple-card px-5 py-3 flex items-center justify-between"
-            >
-              <div className="flex items-center gap-3">
-                <span
-                  className="text-base font-black w-7 text-center"
-                  style={{ color: tier.color }}
-                >
-                  {tier.num}
-                </span>
-                <span className="text-sm font-bold text-[#1D1D1F]">{tier.name}</span>
-              </div>
-              <span className="text-xs text-[#86868B] text-right max-w-[140px]">{tier.action}</span>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: 140 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="mt-8 h-1.5 rounded-full bg-white/50"
+        />
       </motion.div>
     </div>
   );

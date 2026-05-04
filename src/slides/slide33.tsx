@@ -1,38 +1,5 @@
 import { motion } from 'framer-motion';
 
-const cards = [
-  {
-    title: 'Admin & Documentation',
-    points: [
-      'Take meeting minutes',
-      'CCA point allocation',
-      'Helps President and Vice President with admin work',
-      'Ensure clear documentation after every event',
-    ],
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-        <rect x="6" y="4" width="28" height="32" rx="6" fill="#007AFF" opacity="0.1" stroke="#007AFF" strokeWidth="2" />
-        <path d="M12 14H28M12 20H24M12 26H20" stroke="#007AFF" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Communication & Budget',
-    points: [
-      'Communicate with Teacher in Charge',
-      'Sending out emails',
-      'Review and approve event proposals',
-      'Manage budgets with accuracy and care',
-    ],
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-        <rect x="4" y="10" width="32" height="22" rx="6" fill="#007AFF" opacity="0.1" stroke="#007AFF" strokeWidth="2" />
-        <path d="M8 14L20 22L32 14" stroke="#007AFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-];
-
 export default function Slide33() {
   return (
     <div className="slide-base gradient-mesh">
@@ -40,40 +7,32 @@ export default function Slide33() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="flex flex-col items-center w-full max-w-5xl"
+        className="flex flex-col items-center text-center"
       >
         <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="text-[clamp(2rem,5.5vw,4rem)] font-bold tracking-tight text-[#1D1D1F] mb-10"
+        >
+          Meet your Heads of <span className="text-[#007AFF]">Operations</span>
+        </motion.h1>
+        <motion.svg
+          width="100"
+          height="100"
+          viewBox="0 0 100 100"
+          fill="none"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-[clamp(1.5rem,3.5vw,2.5rem)] font-bold tracking-tight text-[#1D1D1F] mb-8"
+          transition={{ delay: 0.5, duration: 0.5 }}
         >
-          Secretary Responsibilities
-        </motion.h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-          {cards.map((c, i) => (
-            <motion.div
-              key={c.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 + i * 0.2, duration: 0.5 }}
-              className="apple-card p-6 flex flex-col gap-4"
-            >
-              <div className="flex items-center gap-3">
-                {c.icon}
-                <h3 className="text-lg font-bold text-[#1D1D1F]">{c.title}</h3>
-              </div>
-              <ul className="flex flex-col gap-2">
-                {c.points.map((pt) => (
-                  <li key={pt} className="flex items-start gap-2 text-sm text-[#86868B]">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#007AFF]" />
-                    {pt}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
+          <circle cx="35" cy="35" r="20" fill="#007AFF" opacity="0.2" />
+          <circle cx="35" cy="35" r="20" stroke="#007AFF" strokeWidth="2" />
+          <path d="M28 38L33 43L42 30" stroke="#007AFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          <circle cx="65" cy="65" r="20" fill="#34C759" opacity="0.2" />
+          <circle cx="65" cy="65" r="20" stroke="#34C759" strokeWidth="2" />
+          <path d="M58 68L63 73L72 60" stroke="#34C759" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        </motion.svg>
       </motion.div>
     </div>
   );
