@@ -11,6 +11,8 @@ import Slide07 from '../slides/slide07';
 import Slide08 from '../slides/slide08';
 import Slide09 from '../slides/slide09';
 import Slide10 from '../slides/slide10';
+import Slide56 from '../slides/slide56';
+import Slide59 from '../slides/slide59';
 import Slide11 from '../slides/slide11';
 import Slide12 from '../slides/slide12';
 import Slide13 from '../slides/slide13';
@@ -24,9 +26,11 @@ import Slide20 from '../slides/slide20';
 import Slide21 from '../slides/slide21';
 import Slide22 from '../slides/slide22';
 import Slide23 from '../slides/slide23';
+import Slide57 from '../slides/slide57';
 import Slide24 from '../slides/slide24';
 import Slide25 from '../slides/slide25';
 import Slide26 from '../slides/slide26';
+import Slide58 from '../slides/slide58';
 import Slide27 from '../slides/slide27';
 import Slide28 from '../slides/slide28';
 import Slide29 from '../slides/slide29';
@@ -68,6 +72,8 @@ const slides = [
   Slide08,
   Slide09,
   Slide10,
+  Slide56,
+  Slide59,
   Slide11,
   Slide12,
   Slide13,
@@ -81,9 +87,11 @@ const slides = [
   Slide21,
   Slide22,
   Slide23,
+  Slide57,
   Slide24,
   Slide25,
   Slide26,
+  Slide58,
   Slide27,
   Slide28,
   Slide29,
