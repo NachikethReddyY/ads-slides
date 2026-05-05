@@ -24,30 +24,15 @@ export default function Slide11() {
           className="apple-card p-3 w-full max-w-3xl"
         >
           <div className="relative aspect-video w-full rounded-xl bg-[#1D1D1F] flex items-center justify-center overflow-hidden">
-            <svg width="100%" height="100%" viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice">
-              <defs>
-                <linearGradient id="vidGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#007AFF" stopOpacity="0.3" />
-                  <stop offset="100%" stopColor="#5856D6" stopOpacity="0.2" />
-                </linearGradient>
-              </defs>
-              <rect width="800" height="450" fill="url(#vidGrad)" />
-              <circle cx="400" cy="225" r="60" fill="white" opacity="0.15" />
-              <polygon points="380,195 380,255 430,225" fill="white" />
-            </svg>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="h-20 w-20 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-xl"
-              >
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                  <polygon points="12,8 12,24 24,16" fill="#007AFF" />
-                </svg>
-              </motion.button>
-            </div>
+            <video
+              className="w-full h-full rounded-xl"
+              controls
+              src="/assets/WhatsApp%20Video%202026-05-05%20at%2014.11.29.mp4"
+            >
+              Your browser does not support the video tag.
+            </video>
           </div>
-          <p className="mt-3 text-sm text-[#86868B]">Click to play competition highlights</p>
+          <p className="mt-3 text-sm text-[#86868B]">Click play to watch the competition highlights</p>
         </motion.div>
       </motion.div>
     </div>
