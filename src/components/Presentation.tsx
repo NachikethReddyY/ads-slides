@@ -132,6 +132,7 @@ export default function Presentation() {
   const [direction, setDirection] = useState(0);
   const [isEditing, setIsEditing] = useState(false);
   const [inputValue, setInputValue] = useState(String(current + 1));
+  const [dragStart, setDragStart] = useState<number | null>(null);
 
   const goNext = useCallback(() => {
     if (current < slides.length - 1) {
@@ -163,23 +164,46 @@ export default function Presentation() {
     return () => window.removeEventListener('keydown', handleKey);
   }, [goNext, goPrev]);
 
+  const handleDragStart = (_e: unknown, info: { point: { x: number } }) => {
+    setDragStart(info.point.x);
+  };
+
+  const handleDragEnd = (_e: unknown, info: { offset: { x: number } }) => {
+    const threshold = 50;
+    if (info.offset.x < -threshold) {
+      goNext();
+    } else if (info.offset.x > threshold) {
+      goPrev();
+    }
+    setDragStart(null);
+  };
+
   const CurrentSlide = slides[current];
 
   return (
     <div className="relative h-screen w-screen overflow-hidden bg-[#FBFBFD]">
-      <AnimatePresence mode="wait" custom={direction}>
-        <motion.div
-          key={current}
-          custom={direction}
-          initial={{ opacity: 0, x: direction > 0 ? 60 : -60 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: direction > 0 ? -60 : 60 }}
-          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="h-full w-full"
-        >
-          <CurrentSlide />
-        </motion.div>
-      </AnimatePresence>
+      <motion.div
+        drag="x"
+        dragConstraints={{ left: 0, right: 0 }}
+        dragElastic={0.1}
+        onDragStart={handleDragStart}
+        onDragEnd={handleDragEnd}
+        className="h-full w-full touch-pan-y"
+      >
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.div
+            key={current}
+            custom={direction}
+            initial={{ opacity: 0, x: direction > 0 ? 60 : -60 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: direction > 0 ? -60 : 60 }}
+            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            className="h-full w-full"
+          >
+            <CurrentSlide />
+          </motion.div>
+        </AnimatePresence>
+      </motion.div>
 
       {/* Controls overlay */}
       <div className="pointer-events-none absolute inset-0 flex flex-col justify-end p-4 md:p-6">
