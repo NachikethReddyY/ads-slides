@@ -58,8 +58,9 @@ import Slide50 from '../slides/slide50';
 import Slide51 from '../slides/slide51';
 import Slide52 from '../slides/slide52';
 import Slide53 from '../slides/slide53';
-import Slide54 from '../slides/slide54';
 import Slide55 from '../slides/slide55';
+import Slide54 from '../slides/slide54';
+import Slide60 from '../slides/slide60';
 
 const slides = [
   Slide01,
@@ -73,7 +74,6 @@ const slides = [
   Slide09,
   Slide10,
   Slide56,
-  Slide59,
   Slide11,
   Slide12,
   Slide13,
@@ -120,6 +120,8 @@ const slides = [
   Slide52,
   Slide53,
   Slide54,
+  Slide59,
+  Slide60,
   Slide55,
 ];
 
