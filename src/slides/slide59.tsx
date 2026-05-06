@@ -32,7 +32,7 @@ export default function Slide59() {
               <img
                 src="/assets/ads-instagram.jpeg"
                 alt="Instagram QR Code"
-                className="w-48 h-48 md:w-60 md:h-60 border-4 border-[#007AFF]/30 rounded-2xl shadow-2xl"
+                className="max-w-60 h-auto mx-auto rounded-2xl shadow-2xl"
               />
               <p className="mt-4 text-center text-[#1D1D1F] font-semibold text-lg">Follow us on Instagram</p>
               <p className="text-center text-[#86868B] text-sm mt-1">@SOC_ADS</p>
