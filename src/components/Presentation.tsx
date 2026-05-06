@@ -132,7 +132,6 @@ export default function Presentation() {
   const [direction, setDirection] = useState(0);
   const [isEditing, setIsEditing] = useState(false);
   const [inputValue, setInputValue] = useState(String(current + 1));
-  const [dragStart, setDragStart] = useState<number | null>(null);
 
   const goNext = useCallback(() => {
     if (current < slides.length - 1) {
@@ -164,10 +163,6 @@ export default function Presentation() {
     return () => window.removeEventListener('keydown', handleKey);
   }, [goNext, goPrev]);
 
-  const handleDragStart = (_e: unknown, info: { point: { x: number } }) => {
-    setDragStart(info.point.x);
-  };
-
   const handleDragEnd = (_e: unknown, info: { offset: { x: number } }) => {
     const threshold = 50;
     if (info.offset.x < -threshold) {
@@ -175,7 +170,6 @@ export default function Presentation() {
     } else if (info.offset.x > threshold) {
       goPrev();
     }
-    setDragStart(null);
   };
 
   const CurrentSlide = slides[current];
@@ -186,7 +180,6 @@ export default function Presentation() {
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
         dragElastic={0.1}
-        onDragStart={handleDragStart}
         onDragEnd={handleDragEnd}
         className="h-full w-full touch-pan-y"
       >
