@@ -61,6 +61,7 @@ import Slide53 from '../slides/slide53';
 import Slide55 from '../slides/slide55';
 import Slide54 from '../slides/slide54';
 import Slide60 from '../slides/slide60';
+import Slide61 from '../slides/slide61';
 
 const slides = [
   Slide01,
@@ -120,6 +121,7 @@ const slides = [
   Slide52,
   Slide53,
   Slide54,
+  Slide61,
   Slide59,
   Slide60,
   Slide55,
